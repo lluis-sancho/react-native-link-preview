@@ -26,6 +26,7 @@ exports.getPreview = function(text, options) {
 
     if (detectedUrl) {
       var request = new XMLHttpRequest();
+      if(!detectedUrl.includes("http")) detectedUrl = "http://"+detectedUrl
       request.onreadystatechange = (e) => {
         if (request.readyState !== 4) {
           return;
